@@ -1,0 +1,27 @@
+# Resemblance between Realtives
+
+## Measures of Relatedness
+
+### Coefficients of identity
+
+### Coefficients of coancestry and inbreeding
+
+### The coefficient of fraternity
+
+## The Genetic Covariance between Relatives
+
+## The effects of Linkage and Gametic Phase Disequilibrium
+
+### Linkage
+
+### Gametic phase disequilibrium
+
+## Assortative Mating
+
+## Polyploidy
+
+## Environmental Sources of Covariance Between Relatives
+
+## The Heritability Concept
+
+### Evolvability

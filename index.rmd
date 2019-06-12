@@ -1,0 +1,3 @@
+# Preface
+
+This is a notebook for reading the book "[Genetics and Analysis of Quantitative Traits (Michael Lynch and Bruce Walsh)](https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812)

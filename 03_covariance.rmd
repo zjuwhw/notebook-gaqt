@@ -1,0 +1,141 @@
+# Covariance, Regression, and Correlation
+
+In the previous chapter, the **variance** was introduced as a measure of the dispersion of a univariate distribution. The **covariance** provides a natural measure of the association between two variables.
+
+## Jointly Distributed Random Variables
+
+The probability of joint occurrence of a pair of random variables $(x,y)$ is specified by the **joint probability density function**, $p(x,y)$, where
+
+$$P(y_1 \le y \le y_2, x_1 \le x \le x_2) = \int_{y_1}^{y_2}\int_{x_1}^{x_2}p(x,y)dxdy$$
+
+The conditional density of y given x, $p(y|x)$,
+
+$$P(y_1 \le y \le y_2|x) = \int_{y_1}^{y_2} p(y|x)dy$$
+So
+
+$$p(x,y) = p(y|x)p(x)$$
+
+Two random variables, x and y are **independent** if
+
+$$p(x,y)=p(x)p(y)$$
+
+or
+
+$p(x|y) = p(x)\text{ or } p(y|x) = p(y)$
+
+### Expectations of jointly distributed variables
+
+In general, **conditional expectations** are computed by using the conditional desnity
+
+$$E(y|x)=\int_{-\infty}^{+\infty}yp(y|x)dy$$
+
+## Covariance
+
+The **covariance** of x and y is defined as
+
+$$\sigma(x,y) = E[(x-\mu_x)(y-\mu_y)] = E(xy)-\mu_x\mu_y$$
+, where $\mu_x$ and $\mu_y$ are the mean of variable x and y, respectively. We often denote covariance by $\sigma_{x,y}$.
+
+The sampling estimator of $\sigma_{x,y}$ is
+
+$$Cov(x,y)=\frac{n(\bar{xy}-\bar{x} \times \bar{y})}{n-1}$$
+
+, where n is the number of paris of observations, $\bar{xy} = \frac{1}{n}\sum_{i=1}^nx_iy_i$, $\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i$ and $\bar{y} = \frac{1}{n}\sum_{i=1}^n y_i$
+
+If x and y are independent, then $\sigma(x,y)=0$, but the converse is not ture.
+
+### Useful identities for variances and covariances
+
+$$\sigma(x,y) = \sigma(y,x)$$
+
+$$\sigma(x,x)=\sigma^2(x)$$
+
+For any constant a,
+
+$$\sigma(a, x) = 0$$
+
+$$\sigma(ax, y) = a\sigma(x,y)$$
+
+For another constant b,
+
+$$\sigma(ax, by) = ab\sigma(x,y)$$
+
+$$\sigma^2(ax) = a^2\sigma^2(x)$$
+
+$$\sigma[(a+x),y] = \sigma(x,y)$$
+
+For four variables x, y, w and z,
+
+$$\sigma[(x+y),(w+z)] = \sigma(x,w)+\sigma(y,w)+\sigma(x,z)+\sigma(y,z)$$
+
+$$\sigma^2(x+y) = \sigma^2(x) + \sigma^2(y) + 2\sigma(x,y)$$
+
+## Regression
+
+$$y = \alpha+\beta x + e$$
+
+- x, predictor/independent variable
+- y, response/dependent variable
+- $\alpha$, intercept
+- $\beta$, regression coefficient
+- $e$, residual error
+
+Usually, $\hat{y}$, a, and b denote the estimator of y, $\alpha$ and $\beta$
+
+### Derivation of the least-squares linear regression
+
+- Least-squares linear regression
+- other criteria: absolute deviations, cubed deviations
+
+The least-squares estomators for the intercept and slope of a linear regression:
+
+$$a = \bar{y} - b\bar{x}$$
+
+$$b = \frac{Cov(x,y)}{Var(x)}$$
+### Properties of least-squares regression
+
+1. The regreesion line passes through the means of both x and y.
+2. The average value of the residual is zero.
+3. For any set of paired data, the least-squares regression parameters, a and b define the straight line that maximizes the amount of variantion in y that can be explained by a linear regression on x.
+4. The residual errors around the least-squares regression are uncorrelated with the predictor variable x.
+5. The true regreesion, the value of $E(y|x)$, is both linear and homoscedastic - when x and y are bivariate normally distributed.
+6. The regression of y on x is different from the regression on y unless the means and variances of the two variables are equal.
+
+## Correlation
+
+The correlation coefficient is defined by
+
+$$r(x,y) = \frac{Cov(x,y)}{\sqrt{Var(x)Var(y)}}$$
+
+The parametric correlation coefficient is denoted by $\rho(x,y)$ (or $\rho$) and equalts $\sigma(x,y)/\sigma(x)\sigma(y)$.
+
+The least-squares regression coefficient is related to the correlation coefficient by
+
+$$b(y,x) = r\sqrt{\frac{Var(y)}{Var(x)}}$$
+
+An advantage of correlations over covariances is that the former are scale independent.
+
+$$r(wx, cy) = r(x,y)$$
+
+Since r is dimensionless with limits of $\pm 1$, it gives a direct measure of the degress of association: if |r| is close t one, x and y are very stronly associated in a linear fashion, while if |r| is close to zero, they are not.
+
+Other propeties:
+
+1. r is a standardized regression coefficient (the regression coefficient resulting from rescaling x and y such that each has unit variance).
+2. The squared correlation coefficient measures the proportion of the variance in y that is explained by assuming that E(y|x) is linear. The variance of the response variable y has two components: $r^2Var(y)$, the amount of variance accounted for by the linear model (the regression variance), and $(1-r^2)Var(y)$, the remaining variance not accountable by the regression (the residual variance).
+
+## A Taste of Quantitative-Genetic Theory
+
+### Directional selection differentials and the Robertson-Price identity
+
+The evolutionary response of a character to selection is a function of the intensity of selection and the fraction of the phenotypic variance attributable to certain genetic effects.
+
+**mean individual fitness**
+
+**Robertson-Price identity**
+
+**breeders' equation**
+
+### The correlation between genotypic and phenotypic values
+
+### Regression of offspring pheotype on parental phenotype

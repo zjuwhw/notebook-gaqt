@@ -1,0 +1,15 @@
+# Components of Environmental Variation
+
+## Extension of the Linear Models to Phenotypes
+
+## Special Environmental Effects
+
+### Within-individual variations
+
+### Developmental homeostasis and homozygosity
+
+### Repeatability
+
+## General Environmental Effects of Maternal Influence
+
+## Genotype * Environment Interaction

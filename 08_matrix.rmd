@@ -1,0 +1,37 @@
+# Introduction of Matrix Algebra and Linear Models
+
+## Multiple Regression
+
+### An application to multivariate selection
+
+## Elementary Matrix Algebra
+
+### Basic notation
+
+### Partitioned matrices
+
+### Addition and subtraction
+
+### Multiplication
+
+### Transposition
+
+### Inverses and solutions to systems of equations
+
+### Determinants and minors
+
+### Computing inverses
+
+## Expectations of Random Vectors and Matrices
+
+## Covariance Matrices of Transformed Vectors
+
+## The Multivariate Normal Distribution
+
+### Properties of the MVN
+
+## Overview of Linear Models
+
+### Ordinary Least squares
+
+### Generalized least squares

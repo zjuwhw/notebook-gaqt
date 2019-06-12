@@ -1,0 +1,15 @@
+# Sources of Genetic Variation for Multilocus Traits
+
+## Epistasis
+
+## A General Least-Squares Model for Genetic Effects
+
+### Extension to haploids and polyploids
+
+## Linkage
+
+### Estimation of gametic phase disequilibrium
+
+## Effect of Diseequilibrium on the Genetic Variance
+
+### The evidence

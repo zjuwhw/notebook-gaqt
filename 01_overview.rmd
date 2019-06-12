@@ -1,0 +1,57 @@
+# An Overview of Quantitative Genetics
+
+## The Adaptationist Approach to Phenotypic Evolution
+
+## Quantitative Genetics and Phenotypic Evolution
+
+- The "main principles" has been outlined independently by Ronald Fisher (1918) and Sewall Wright (1921).
+- Theoretical basis for most plant and animal breeding programs for well over a half century.
+- Complex human genetic disorders
+- Evolutionary biology (1980-)
+- Molecular biology
+
+- Francis Galton: empirical motivation
+- Karl Pearson: formal development of the theory of regression and correlation
+- Ronald Fisher: concept of variance-component partitioning (analsis of varaince, ANOVA), the development of methods for experimental design and hypothesis testing
+- Sewall Wright: path analysis.
+
+## Historical Background
+
+## The Major Goals of Quantitative Genetics
+
+### The nature of quantitative-trait variation
+
+- Partitioning phenotypic variance into its various compoents (Chapters 17-27)
+- the phenotypic resemblance between relatives provides information on the degreee of genetic differentiation among individuals (Chapter 7)
+- Genotype * environment interaction (Chapter 22)
+- There are several components of both environmental and genetic variation (Chapters 4, 5, and 6)
+- The additive component of the genetic variance (the variance of breeding value) is of particluar interest
+
+Utimately, the pool of genetic variation in a population must be due to quasi-balance between the forces of selection and random genetic drift, both of which tend to eliminate variation, and the replenishing force of mutation.
+
+- mutational rate of production of new variation (Chapter 12)
+- the number of loci underlying a character is likely to be large or small (Chapters 9 and 13)
+- molecular-marker-based approaches, QTLs (Chapters 14-16)
+- nonadditive effect (Chapter 5)
+- Chapter 11
+
+### The consequences of inbreeding and outcrossing
+
+Inbreeding effects are almost always deleterious, generally increasing linearly with the degree os relatedness between parents (Chapter 10)
+
+Crosses between isolated lines or populations often exhibit "hybrid vigor" in the F1 generation, only to be followed by substantial fitness decline in the next (F2) generation. (Chapter 9)
+
+### The constraints on the evolutionary process
+
+- Selection opreates on a single trait
+- correlated traits
+- genetic correlation (Chapter 21)
+
+### The estimation of breeding values
+
+BLUP (Chapter 26)
+
+### The development of predictive models for evolutionary change
+
+## Mathematics in Biology
+

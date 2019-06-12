@@ -1,0 +1,33 @@
+# Properties of Single Loci
+
+## Allele and Genotype Frequencies
+
+## The Transmission of Genetic Information
+
+### The Hardy-Weinberg principle
+
+### Sex-linked loci
+
+### Polyploidy
+
+### Age structure
+
+### Testing for Hardy-Weinberg propertions
+
+## Characterizzing the influence of a Locus on the Phenotype
+
+## The Basis of Dominance
+
+## Fisher's Decomposition of the Genetypic Value
+
+## Partitioning the Genetic Variance
+
+## Additive Effects, Average Excesses, and Breeding Values
+
+## Extensions to Multiple Alleles and Nonrandom Mating
+
+### Average excess
+
+### Additive effects
+
+### Additive genetic variance

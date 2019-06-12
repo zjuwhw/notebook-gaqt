@@ -1,0 +1,112 @@
+# Estimation of Breeding Values
+
+All of the methods to be covered are based on the **general mixed model**. This chapter introduces **best linear unbiased prediction (BLUP)**, a general method for predicting random effects (such as breeding values and maternal effects), while Chapter 27 is concerned with the estiamtion of genetic variances by **restricted maximum likelihoold (REML)**. These two methods are related in that BLUP assumes that the appropriate variance components are known, while REML procedures estimate variance components in an iterative fashion from BLUP estimates of random effects.
+
+## The General Mixed Model
+
+$$\bf{y = X}\pmb{\beta}+\bf{Zu+e}$$
+
+- $\bf{y}$, a column vector containing the phenotypic values for a trait measured in *n* individuals
+- $\pmb{\beta}$, a $p \times 1$ vector of **fixed effects**
+- $\bf{u}$, a $q \times 1$ vector of **random effects**
+- $\bf{X}$, $n \times p$ **incidence matrices** (also called the **design matrix**)
+- $\bf{Z}$, $n \times q$ **incidence matrices**
+- $\bf{e}$, a $n times 1$ column vector of residual deviations assume to be distributed independently of the random genetic effects
+
+Because the model jointly accounts for **fixed and random effects**, it is generally referred to as a mixed model (Eisenhart 1947).
+
+**Example 1**
+
+Let $y_{ijk}$ denote the phenotypic value of the $k$th offspring of sire $i$ in environment $j$.
+
+|Obersvation|Value|Sire|Environment|
+|:--:|:--:|:--:|:--:|
+|$y_{111}$|9|1|1|
+|$y_{121}$|12|1|2|
+|$y_{211}$|11|2|1|
+|$y_{212}$|6|2|1|
+|$y_{311}$|7|3|1|
+|$y_{321}$|14|3|2|
+
+So the resulting vector/matrix in the mixed model are
+
+$\pmb{y} = \begin{pmatrix} y_{111} \\ y_{121} \\ y_{211} \\ y_{212} \\ y_{311} \\ y_{321} \end{pmatrix} = \begin{pmatrix} 9 \\ 12 \\ 11 \\ 6 \\ 7 \\14 \end{pmatrix}$, $\pmb{X} =   \begin{pmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 0\\ 1 & 0\\ 1 & 0\\ 0 & 1 \end{pmatrix}$, $\pmb{Z} = \begin{pmatrix} 1 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 1 \\  \end{pmatrix}$, $\pmb{\beta}=\begin{pmatrix} \beta_1 \\ \beta_2 \end{pmatrix}$, $\pmb{u} = \begin{pmatrix} u_1 \\ u_2 \\ u_3 \end{pmatrix}$
+
+Now assume $\pmb{u} \sim (0, \pmb{G})$ and $\pmb{e} \sim (0, \pmb{R})$, then the covariance matrix for the vector of observations $\bf{y}$ is 
+
+$$Var(\pmb{y}) = \bf{V} = ZGZ^T+R$$
+
+Generally we assume the residual errors have constant variance and are uncorrelated, so $\pmb{R} = \sigma_E^2\pmb{I}$ (a diagonal matrix).
+
+For the mixed model, we observe $\bf{y}$, $\bf{X}$, and $\bf{Z}$, while $\pmb{\beta}$, $\pmb{u}$, $\pmb{R}$, and $\pmb{G}$ are genrally unknown. Thus, mixed-model analysis involves two complementary estimation issues:
+
+1. estimation of he vectors of fixed and random effects $\pmb{\beta}$ and $\pmb{u}$ (chapter 26)
+2. estimation of the covariance matrices $\pmb{R}$ and $\pmb{G}$ (chapter 27)
+
+## Estimating Fixed Effects and Predicting Random Effects
+
+Inferences about fixed effects have come to be called **estimates**, whereas those that concern random effects are known as **predictions**. The most widely used procedures are **BLUE (best linear unbiased estimator)** and **BLUP (best linear unbiased predictor)**. The "best" means they minimize the sampling variance, "linear" means they are linear functions of the obersved phenotypes $\bf{y}$, and "unbiased" means $E[BLUE(\pmb{\beta})] = \pmb{\beta}$ and $E[BLUP(\pmb{u})] = \pmb{u}$.
+
+BLUE
+
+$$\pmb{\hat{\beta}} = \bf{(X^TV^{-1}X)^{-1}X^TV^{-1}y}$$
+
+BLUP
+
+$$\bf{\hat{u} = GZ^TV^{-1}(y-X\pmb{\beta})}$$
+
+The practical application of both of these expressions requires that the variance components be known. Thus, prior to a BLUP analysis, the variance components need to be estimated by ANOVA or REML.
+
+As BLUE and BLUP require the inverse of the covariance matrix $\bf{V^{-1}}$, when $\bf{y}$ contains many thousands of observations, the computation of $\bf{V^{-1}}$ can be quite difficult. Henderson offered a more compact method for jointly obtaining $\pmb{\hat{\beta}}$ and $\bf{\hat{u}}$ in the form of his **mixed-model equations (MME)**,
+
+$$\begin{pmatrix}\bf{ X^TR^{-1}X} & \bf{ X^TR^{-1}Z} \\ \bf{ Z^TR^{-1}X} & \bf{ Z^TR^{-1}Z+G^{-1}} \end{pmatrix} \begin{pmatrix} \pmb{\hat{\beta}} \\ \bf{\hat{u}} \end{pmatrix} = \begin{pmatrix} \bf{X^TR^{-1}y} \\ \bf{Z^TR^{-1}y} \end{pmatrix}$$
+
+As $\bf{R}$ and $\bf{G}$ are usually diagonal, $\bf{R^{-1}}$ and $\bf{G^{-1}}$ are trivial to obtain. In addition, the leftmost matrix has a dimension $(p+q) \times (p+q)$, which is usually considerably less than the dimensionality of $\bf{V}$ (an $n \times n$ matrix).
+
+### Estimability of fixed factors
+
+### Standard Errors
+
+A relatively straightforward extension of Henderson's mixed-model equations provides estimates of the standard errors of the fixed and random effects. Let the inverse of the leftmost matrix in MME be
+
+$$\begin{pmatrix}\bf{ X^TR^{-1}X} & \bf{ X^TR^{-1}Z} \\ \bf{ Z^TR^{-1}X} & \bf{ Z^TR^{-1}Z+G^{-1}} \end{pmatrix}^{-1} = \begin{pmatrix} \bf{C_{11}} & \bf{C_{12}} \\ \bf{C_{12}^T} & \bf{C_{22}} \end{pmatrix}$$
+
+, where $\bf{C_{11}}$, $\bf{C_{12}}$, and $\bf{C_{22}}$ are, respectively, $p \times p$, $\p \times q$, and $q \times q$ submatrices. Henderson (1975) showed that the sampling covariance matrix for the BLUE of $\beta$ is given by
+
+$$\sigma(\pmb{\hat{\beta}}) = \bf{C_{11}}$$
+
+, that the sampling covariance matrix of the prediction errors $(\bf{\hat{u} - u})$ is given by
+
+$$\sigma(\bf{\hat{u} - u}) = C_{22}$$
+
+, and that the sampling covariance of the estimated effects and prediction errors is given by
+
+$$\sigma(\pmb{\hat{\beta}},\bf{\hat{u} - u}) = C_{12}$$
+
+## Models for the Estimation of Breeding Values
+
+- **Animal models** estimate the breeding values of each measured individual;
+- **Gametic models** describe the breeding values of measured individuals in teerms of parental contributions;
+- **Reduced animal model** combines aspects of both the animal and gametic models in specific applications in which parental breeding values are the only ones of interest.
+
+### The animal model
+
+
+
+### The gametic model
+
+### The reduced animal model
+
+## Sample Rules for Computing $A$ and $A^{-1}$
+
+### Allowing for mutation when computing A
+
+## Joint Estimation of Several Vectors of Random Effects
+
+### BLUP estimates of dominance values
+
+### Repeated records
+
+### Maternal effects
+
+### Multiple traits
